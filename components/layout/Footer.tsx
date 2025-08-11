@@ -1,12 +1,10 @@
-"use client"
-
 import { footerSection } from "@/constants/footer"
 import Logo from "./Logo"
 import Link from "next/link"
 import { Button } from "../ui/button"
 import React from "react"
 import { Separator } from "../ui/separator"
-import { motion } from "motion/react"
+import * as motion from "motion/react-client"
 import { SlideLeft } from "@/animation/animate"
 
 export default function Footer() {

@@ -1,9 +1,7 @@
-"use client"
-
 import { SlideUp } from "@/animation/animate"
 import { Button } from "../ui/button"
 import { Input } from "../ui/input"
-import { motion } from "motion/react"
+import * as motion from "motion/react-client"
 
 export default function Subscribe() {
 	return (

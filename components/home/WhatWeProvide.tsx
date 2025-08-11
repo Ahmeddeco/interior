@@ -1,9 +1,7 @@
-"use client"
-
 import { CircleDollarSign, ClipboardPenLine, Workflow } from "lucide-react"
 import CustomCard from "../shared/CustomCard"
 import { Color } from "@/enums/color"
-import { motion } from "motion/react"
+import * as motion from "motion/react-client"
 import { SlideUp } from "@/animation/animate"
 export default function WhatWeProvide() {
 	return (

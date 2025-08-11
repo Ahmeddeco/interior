@@ -1,8 +1,6 @@
-"use client"
-
 import { Button } from "../ui/button"
 import Image from "next/image"
-import { motion } from "motion/react"
+import * as motion from "motion/react-client"
 import { SlideDown, SlideUp } from "@/animation/animate"
 import { AnimatePresence } from "motion/react"
 export default function Hero() {

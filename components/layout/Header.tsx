@@ -1,10 +1,8 @@
-'use client'
-
 import { NavLinks } from "@/constants/navLinks"
 import Link from "next/link"
 import { Button } from "../ui/button"
 import Logo from "./Logo"
-import { motion } from "motion/react"
+import * as motion from "motion/react-client"
 
 export default function Header() {
 	return (

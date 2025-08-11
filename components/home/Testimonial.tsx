@@ -1,9 +1,7 @@
-"use client"
-
 import { TestimonialData } from "@/constants/testimonialData"
 import AvatarCard from "../shared/AvatarCard"
 import { Card, CardContent } from "../ui/card"
-import { motion } from "motion/react"
+import * as motion from "motion/react-client"
 import { SlideLeft, SlideUp } from "@/animation/animate"
 
 export default function Testimonial() {

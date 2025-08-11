@@ -1,8 +1,6 @@
-"use client"
-
 import { BrandsImage } from "@/constants/brands"
 import Image from "next/image"
-import { motion } from "motion/react"
+import * as motion from "motion/react-client"
 import { SlideLeft } from "@/animation/animate"
 
 export default function Brands() {
