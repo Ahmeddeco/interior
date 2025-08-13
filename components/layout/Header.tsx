@@ -1,17 +1,16 @@
 import Logo from "./Logo"
-import * as motion from "motion/react-client"
 import LanguageButton from "./LanguageButton"
 import User from "../auth/User"
 import ThemeButton from "../theme/ThemeButton"
 import MobileNav from "./MobileNav"
 import NavLink from "./NavLink"
+import MotionWrapper from "../shared/MotionWrapper"
+import { SlideDown } from "@/animation/animate"
 
 export default function Header() {
 	return (
-		<motion.header
-			initial={{ y: -100 }}
-			animate={{ y: 0 }}
-			transition={{ duration: 0.5 }}
+		<MotionWrapper
+			variants={SlideDown(0.2)}
 			className="w-dvw h-14 z-50 fixed inset-0 bg-neutral-100/95 border-b px-8 lg:px-24 flex items-center justify-between"
 		>
 			{/* ---------------------------------- Logo ---------------------------------- */}
@@ -30,6 +29,6 @@ export default function Header() {
 			<nav className="lg:hidden block">
 				<MobileNav />
 			</nav>
-		</motion.header>
+		</MotionWrapper>
 	)
 }

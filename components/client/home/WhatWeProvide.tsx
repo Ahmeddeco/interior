@@ -1,28 +1,26 @@
 import { CircleDollarSign, ClipboardPenLine, Workflow } from "lucide-react"
 import CustomCard from "../../shared/CustomCard"
 import { Color } from "@/enums/color"
-import * as motion from "motion/react-client"
 import { SlideUp } from "@/animation/animate"
+import MotionWrapper from "@/components/shared/MotionWrapper"
+
 export default function WhatWeProvide() {
 	return (
 		<section className="flex flex-col gap-12 items-center">
 			{/* ---------------------------------- title --------------------------------- */}
 			<div className="flex flex-col items-center gap-6">
-				<motion.h2 variants={SlideUp(0.2)} initial="initial" whileInView={"animate"}>
-					What We Provide
-				</motion.h2>
-				<motion.p
-					variants={SlideUp(0.4)}
-					initial="initial"
-					whileInView={"animate"}
-					className="max-w-2xs text-pretty text-center"
-				>
-					We provide a wide range of interior design services to meet your needs.
-				</motion.p>
+				<MotionWrapper variants={SlideUp(0.2)}>
+					<h2>What We Provide</h2>
+				</MotionWrapper>
+				<MotionWrapper variants={SlideUp(0.4)}>
+					<p className="max-w-2xs text-pretty text-center">
+						We provide a wide range of interior design services to meet your needs.
+					</p>
+				</MotionWrapper>
 			</div>
 			{/* ---------------------------------- cards --------------------------------- */}
 			<div className="flex flex-wrap justify-center gap-8">
-				<motion.div variants={SlideUp(0.2)} initial="initial" whileInView={"animate"} className="">
+				<MotionWrapper variants={SlideUp(0.2)} className="">
 					<CustomCard
 						title={"luxury"}
 						titleBr={"facilities"}
@@ -31,8 +29,8 @@ export default function WhatWeProvide() {
 						linkTitle={"learn more"}
 						icon={ClipboardPenLine}
 					/>
-				</motion.div>
-				<motion.div variants={SlideUp(0.4)} initial="initial" whileInView={"animate"} className="">
+				</MotionWrapper>
+				<MotionWrapper variants={SlideUp(0.4)} className="">
 					<CustomCard
 						title={"affordable"}
 						titleBr={"price"}
@@ -42,8 +40,8 @@ export default function WhatWeProvide() {
 						icon={CircleDollarSign}
 						color={Color.black}
 					/>
-				</motion.div>
-				<motion.div variants={SlideUp(0.6)} initial="initial" whileInView={"animate"} className="">
+				</MotionWrapper>
+				<MotionWrapper variants={SlideUp(0.6)} className="">
 					<CustomCard
 						title={"smooth"}
 						titleBr={"workflow"}
@@ -52,7 +50,7 @@ export default function WhatWeProvide() {
 						linkTitle={"learn more"}
 						icon={Workflow}
 					/>
-				</motion.div>
+				</MotionWrapper>
 			</div>
 		</section>
 	)

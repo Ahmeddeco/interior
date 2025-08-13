@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
 import "./globals.css"
-import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
 import { roboto, robotoSerif } from "@/fonts"
 import { ThemeProvider } from "@/components/theme/theme-provider"
+import Header from "@/components/layout/Header"
 
 export const metadata: Metadata = {
 	title: "Interior | 3D Interior Design",

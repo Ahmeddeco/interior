@@ -1,7 +1,17 @@
-import { auth } from "@/auth"
+import { auth, signIn, signOut } from "@/auth"
 import connectDb from "@/lib/db"
 import Admin from "@/models/admin"
 import { redirect } from "next/navigation"
+
+/* ------------------------------ signInAction ------------------------------ */
+export const signInAction = async () => {
+				await signIn("google", { redirectTo: "/api/auth/create"})
+			}
+
+/* ------------------------------ signOutAction ----------------------------- */
+      export const signOutAction = async () => {
+				await signOut()
+			}
 
 /* ------------------------------ isSuperAdmin ------------------------------ */
 export const isSuperAdmin = async () => {
