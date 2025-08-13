@@ -8,9 +8,7 @@ import ServerLink from "./ServerLink"
 
 export default function ServerAside() {
 	const pathName = usePathname()
-	console.log("pathName from serverAside", pathName)
 	const locale = useCurrentLocale()
-	console.log("locale from serverAside", locale)
 
 	return (
 		<Card>
