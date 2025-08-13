@@ -1,14 +1,13 @@
-"use client"
-
-import { motion, Variants } from "motion/react"
+// "use client"
+import * as motion from "motion/react-client"
+import { Variants } from "motion/react"
 type Props = {
 	children: React.ReactNode
 	variants: Variants
 	className?: string
-  type?:"div"|"section"|"h2"|"h1"|"p"|"span"|undefined
 }
 
-export default function MotionWrapper({ children, variants, className ,type}: Props) {
+export default function MotionWrapper({ children, variants, className }: Props) {
 	return (
 		<motion.div variants={variants} initial="initial" whileInView={"animate"} className={className}>
 			{children}

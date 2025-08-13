@@ -1,3 +1,5 @@
+'use server'
+
 import { auth, signIn, signOut } from "@/auth"
 import connectDb from "@/lib/db"
 import Admin from "@/models/admin"
