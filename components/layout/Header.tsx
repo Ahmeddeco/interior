@@ -1,5 +1,3 @@
-import { NavLinks } from "@/constants/navLinks"
-import Link from "next/link"
 import Logo from "./Logo"
 import * as motion from "motion/react-client"
 import LanguageButton from "./LanguageButton"

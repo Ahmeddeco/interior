@@ -1,10 +1,7 @@
 "use client"
 
-import React from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
 import { Separator } from "../ui/separator"
-import { serverLinks } from "@/constants/serverLinks"
-import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useCurrentLocale } from "@/locales/client"
 import ServerLink from "./ServerLink"

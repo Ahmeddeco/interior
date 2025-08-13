@@ -1,6 +1,5 @@
 import MobileServerNav from "@/components/layout/MobileServerNav"
 import ServerAside from "@/components/layout/ServerAside"
-import { Card } from "@/components/ui/card"
 
 export default function ServerLayout({ children }: { children: React.ReactNode }) {
 	return (
