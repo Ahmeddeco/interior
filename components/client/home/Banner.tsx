@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Button } from "../ui/button"
+import { Button } from "../../ui/button"
 import * as motion from "motion/react-client"
 import { SlideLeft, SlideRight } from "@/animation/animate"
 export default function Banner() {

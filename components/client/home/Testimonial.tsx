@@ -1,6 +1,6 @@
 import { TestimonialData } from "@/constants/testimonialData"
-import AvatarCard from "../shared/AvatarCard"
-import { Card, CardContent } from "../ui/card"
+import AvatarCard from "../../shared/AvatarCard"
+import { Card, CardContent } from "../../ui/card"
 import * as motion from "motion/react-client"
 import { SlideLeft, SlideUp } from "@/animation/animate"
 

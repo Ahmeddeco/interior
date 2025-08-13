@@ -1,0 +1,21 @@
+import Banner from "@/components/client/home/Banner"
+import Banner2 from "@/components/client/home/Banner2"
+import Brands from "@/components/client/home/Brands"
+import Hero from "@/components/client/home/Hero"
+import Subscribe from "@/components/client/home/Subscribe"
+import Testimonial from "@/components/client/home/Testimonial"
+import WhatWeProvide from "@/components/client/home/WhatWeProvide"
+
+export default function HomePage() {
+	return (
+		<>
+			<Hero />
+			<Brands />
+			<WhatWeProvide />
+			<Banner />
+			<Banner2 />
+			<Testimonial />
+			<Subscribe />
+		</>
+	)
+}

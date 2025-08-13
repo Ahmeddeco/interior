@@ -1,5 +1,5 @@
 import { CircleDollarSign, ClipboardPenLine, Workflow } from "lucide-react"
-import CustomCard from "../shared/CustomCard"
+import CustomCard from "../../shared/CustomCard"
 import { Color } from "@/enums/color"
 import * as motion from "motion/react-client"
 import { SlideUp } from "@/animation/animate"
