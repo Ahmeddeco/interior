@@ -1,5 +1,5 @@
 import SubmitButton from "@/components/shared/SubmitButton"
-import UploadThingDropArea from "@/components/shared/UploadThingDropArea"
+import  { UploadOneImagesDropZone } from "@/components/shared/UploadImagesDropZone"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -7,6 +7,7 @@ import { Separator } from "@/components/ui/separator"
 import { addAdmin } from "@/functions/admin.action"
 import { isSuperAdmin } from "@/functions/authentication"
 import Form from "next/form"
+
 export default async function AddPage() {
 	const user = await isSuperAdmin()
 	return (
@@ -36,7 +37,7 @@ export default async function AddPage() {
 						<Label htmlFor="mobile">mobile</Label>
 						<Input name="mobile" placeholder="01234567890" type="number" required minLength={10} maxLength={14} />
 					</div>
-					<UploadThingDropArea endpoint="oneImageUploader" />
+					<UploadOneImagesDropZone />
 					<SubmitButton />
 				</CardContent>
 			</Form>

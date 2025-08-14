@@ -9,7 +9,6 @@ import { toast } from "sonner"
 /* -------------------------------- addAdmin -------------------------------- */
 export const addAdmin = async (formData: FormData) => {
   const data = Object.fromEntries(formData)
-
   try {
     await connectDb()
     await Admin.create({
@@ -18,6 +17,36 @@ export const addAdmin = async (formData: FormData) => {
       mobile: data.mobile,
       image: data.images
     })
+  } catch (error) {
+    console.error(error)
+  }
+  redirect("/server/admin")
+}
+
+
+/* -------------------------------- editAdmin ------------------------------- */
+export const editAdmin = async (formData: FormData) => {
+  const data = Object.fromEntries(formData)
+  try {
+    await connectDb()
+    await Admin.findByIdAndUpdate(data.id, {
+      name: data.name,
+      email: data.email,
+      mobile: data.mobile,
+      image: data.image
+    })
+  } catch (error) {
+    console.error(error)
+  }
+  redirect("/server/admin")
+}
+
+/* ------------------------------- deleteAdmin ------------------------------ */
+export const deleteAdmin = async (formData: FormData) => {
+  const id = formData.get("id")
+  try {
+    await connectDb()
+    await Admin.findByIdAndDelete(id)
   } catch (error) {
     console.error(error)
   }

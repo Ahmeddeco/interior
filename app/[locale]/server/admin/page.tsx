@@ -3,18 +3,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import { EllipsisVertical, PlusCircle } from "lucide-react"
 import Link from "next/link"
-import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { getAdmins } from "@/data/admin.data"
 import Image from "next/image"
-import {
-	Dialog,
-	DialogContent,
-	DialogDescription,
-	DialogHeader,
-	DialogTitle,
-	DialogTrigger,
-} from "@/components/ui/dialog"
+import { getImageUrl } from "@/functions/getImageUrl"
+
 export default async function AdminPage() {
 	const admins = await getAdmins()
 	return (
@@ -48,7 +42,7 @@ export default async function AdminPage() {
 							<TableRow className="grid grid-cols-12 min-h-16 items-center h-fit" key={admin._id}>
 								<TableCell className="col-span-2">
 									<Image
-										src={admin.image}
+										src={getImageUrl(admin.image)}
 										alt={"admin"}
 										width={48}
 										height={48}

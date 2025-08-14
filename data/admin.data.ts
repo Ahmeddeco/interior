@@ -11,3 +11,14 @@ export const getAdmins = async () => {
     console.error(error)
   }
 }
+
+/* ------------------------------- getOneAdmin ------------------------------ */
+export const getOneAdmin = async (id: string) => {
+  try {
+    connectDb()
+    const admin = await Admin.findById(id)
+    return admin
+  } catch (error) {
+    console.error(error)
+  }
+}
