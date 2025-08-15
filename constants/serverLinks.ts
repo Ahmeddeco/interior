@@ -11,16 +11,21 @@ export const serverLinks = [
   },
   {
     id: 3,
-    title: "3D interior",
-    link: "/server/interior",
+    title: "client",
+    link: "/server/client",
   },
   {
     id: 4,
+    title: "interior",
+    link: "/server/interior",
+  },
+  {
+    id: 5,
     title: "furniture",
     link: "/server/furniture",
   },
   {
-    id: 5,
+    id: 6,
     title: "accessories",
     link: "/server/accessories",
   },

@@ -74,6 +74,9 @@ importers:
       react:
         specifier: 19.1.0
         version: 19.1.0
+      react-country-state-city:
+        specifier: ^1.1.12
+        version: 1.1.12(react@19.1.0)
       react-day-picker:
         specifier: ^9.8.1
         version: 9.8.1(react@19.1.0)
@@ -2398,6 +2401,11 @@ packages:
 
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
+
+  react-country-state-city@1.1.12:
+    resolution: {integrity: sha512-9xOfUvm5uw5zZEjjNT3eooWvrJB08Hv1MITPYfgeQUttCHEpxbD/iqMzXNBF2g3Owc9MEnhrKCSpKn5DpTDHqg==}
+    peerDependencies:
+      react: '>=16'
 
   react-day-picker@9.8.1:
     resolution: {integrity: sha512-kMcLrp3PfN/asVJayVv82IjF3iLOOxuH5TNFWezX6lS/T8iVRFPTETpHl3TUSTH99IDMZLubdNPJr++rQctkEw==}
@@ -5125,6 +5133,10 @@ snapshots:
   pure-rand@6.1.0: {}
 
   queue-microtask@1.2.3: {}
+
+  react-country-state-city@1.1.12(react@19.1.0):
+    dependencies:
+      react: 19.1.0
 
   react-day-picker@9.8.1(react@19.1.0):
     dependencies:

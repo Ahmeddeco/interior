@@ -12,10 +12,10 @@ export const addAdmin = async (formData: FormData) => {
   try {
     await connectDb()
     await Admin.create({
-      name: data.name,
+      fullName: data.fullName,
       email: data.email,
       mobile: data.mobile,
-      image: data.images
+      image: data.image
     })
   } catch (error) {
     console.error(error)
@@ -30,7 +30,7 @@ export const editAdmin = async (formData: FormData) => {
   try {
     await connectDb()
     await Admin.findByIdAndUpdate(data.id, {
-      name: data.name,
+      fullName: data.fullName,
       email: data.email,
       mobile: data.mobile,
       image: data.image

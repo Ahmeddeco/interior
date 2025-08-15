@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button"
-import { Card, CardHeader, CardTitle, CardDescription, CardFooter, CardContent } from "@/components/ui/card"
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
-import { deleteAdmin } from "@/functions/admin.action"
 import { isSuperAdmin } from "@/functions/authentication"
+import { deleteClient } from "@/functions/client.action"
 import Form from "next/form"
 import Link from "next/link"
 
@@ -20,9 +20,9 @@ export default async function DeletePage({ params }: { params: Promise<{ id: str
 			<Separator />
 			<CardContent className="flex items-center justify-between gap-12">
 				<Button variant={"success"} asChild>
-					<Link href={"/server/admin"}>cancel</Link>
+					<Link href={"/server/client"}>cancel</Link>
 				</Button>
-				<Form action={deleteAdmin}>
+				<Form action={deleteClient}>
 					<Input type="hidden" name="id" value={id} />
 					<Button variant={"destructive"}>delete</Button>
 				</Form>

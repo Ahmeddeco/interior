@@ -22,8 +22,8 @@ export default async function AddPage() {
 				<CardContent className="flex flex-col gap-4">
 					{/* ---------------------------------- name ---------------------------------- */}
 					<div className="flex flex-col gap-2">
-						<Label htmlFor="name">name</Label>
-						<Input name="name" placeholder="Ahmed Mohamed" type="text" required />
+						<Label htmlFor="full Name">full Name</Label>
+						<Input name="fullName" placeholder="Ahmed Mohamed" type="text" required />
 					</div>
 
 					{/* ---------------------------------- email --------------------------------- */}
@@ -37,7 +37,7 @@ export default async function AddPage() {
 						<Label htmlFor="mobile">mobile</Label>
 						<Input name="mobile" placeholder="01234567890" type="number" required minLength={10} maxLength={14} />
 					</div>
-					<UploadOneImagesDropZone />
+					<UploadOneImagesDropZone  />
 					<SubmitButton />
 				</CardContent>
 			</Form>

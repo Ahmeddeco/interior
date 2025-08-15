@@ -18,7 +18,7 @@ type Props = {
 
 /* ------------------------ UploadManyImagesDropZone ------------------------ */
 export function UploadManyImagesDropZone({ dbImages }: Props) {
-	const [images, setImages] = useState<string[]>([])
+	const [images, setImages] = useState<string[]>(dbImages ? dbImages : [])
 	const handleDeleteManyImages = (index: number) => {
 		setImages(images.filter((_, i) => i !== index))
 	}
@@ -74,7 +74,7 @@ export function UploadManyImagesDropZone({ dbImages }: Props) {
 
 /* ------------------------- UploadOneImagesDropZone ------------------------ */
 export function UploadOneImagesDropZone({ dbImage }: Props) {
-	const [image, setImage] = useState<string>(dbImage || "")
+	const [image, setImage] = useState<string>(dbImage ? dbImage : "")
 	const handleDeleteOneImages = () => {
 		setImage("")
 	}

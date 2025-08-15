@@ -3,38 +3,23 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Separator } from "@/components/ui/separator"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { getAllInteriorsForInteriorPage } from "@/data/interior.data"
-import { Styles } from "@/enums/styles"
+import { getAllClients } from "@/data/client.data"
 import { getImageUrl } from "@/functions/getImageUrl"
 import { EllipsisVertical, PlusCircle } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
-type InteriorType = {
-	title: { ar: string; en: string }
-	_id: string
-	style: Styles
-	images: string[]
-	client: {
-		_id: string
-		fullName: string
-	}
-	country: string
-	city: string
-}
-
-export default async function InteriorPage({ params }: { params: Promise<{ locale: "ar" | "en" }> }) {
-	const locale = (await params).locale
-	const interiors: InteriorType[] | undefined = await getAllInteriorsForInteriorPage()
+export default async function ClientPage() {
+	const clients = await getAllClients()
 
 	return (
 		<Card>
 			<CardHeader>
 				<CardTitle className="flex items-center justify-between">
-					<h4>interior page</h4>
+					<h4>client page</h4>
 					<Button asChild>
-						<Link href={`/server/interior/add`}>
-							add interior
+						<Link href={`/server/client/add`}>
+							add client
 							<PlusCircle />
 						</Link>
 					</Button>
@@ -46,32 +31,28 @@ export default async function InteriorPage({ params }: { params: Promise<{ local
 					<TableHeader>
 						<TableRow className="grid grid-cols-12">
 							<TableHead className="col-span-2">image</TableHead>
-							<TableHead className="col-span-3">title</TableHead>
-							<TableHead className="col-span-2">owner</TableHead>
-							<TableHead className="col-span-1">style</TableHead>
-							<TableHead className="col-span-3">address</TableHead>
+							<TableHead className="col-span-3">name</TableHead>
+							<TableHead className="col-span-3">email</TableHead>
+							<TableHead className="col-span-3">mobile</TableHead>
 							<TableHead className="text-right col-span-1">edit</TableHead>
 						</TableRow>
 					</TableHeader>
 					{/* -------------------------------- TableBody ------------------------------- */}
 					<TableBody>
-						{interiors?.map((interior) => (
-							<TableRow className="grid grid-cols-12 min-h-16 items-center h-fit" key={interior._id}>
+						{clients?.map((client) => (
+							<TableRow className="grid grid-cols-12 min-h-16 items-center h-fit" key={client._id}>
 								<TableCell className="col-span-2">
 									<Image
-										src={getImageUrl(interior.images[0])}
-										alt={"interior"}
+										src={getImageUrl(client.image)}
+										alt={"client"}
 										width={48}
 										height={48}
 										className=" aspect-square object-contain"
 									/>
 								</TableCell>
-								<TableCell className="col-span-3">{interior.title[locale]}</TableCell>
-								<TableCell className="col-span-2">{interior.client.fullName}</TableCell>
-								<TableCell className="col-span-1">{interior.style}</TableCell>
-								<TableCell className="col-span-3">
-									{interior.country} - {interior.city}
-								</TableCell>
+								<TableCell className="col-span-3">{client.fullName}</TableCell>
+								<TableCell className="col-span-3">{client.email}</TableCell>
+								<TableCell className="col-span-3">{client.mobile}</TableCell>
 								<TableCell className="text-right col-span-1">
 									{/* ---------------------------------- edit ---------------------------------- */}
 									<DropdownMenu>
@@ -84,13 +65,13 @@ export default async function InteriorPage({ params }: { params: Promise<{ local
 											{/* ---------------------------------- edit ---------------------------------- */}
 											<DropdownMenuItem>
 												<Button asChild className="w-full" variant={"secondary"}>
-													<Link href={`/server/interior/edit/${interior._id}`}>edit</Link>
+													<Link href={`/server/client/edit/${client._id}`}>edit</Link>
 												</Button>
 											</DropdownMenuItem>
 											{/* --------------------------------- delete --------------------------------- */}
 											<DropdownMenuItem>
 												<Button asChild type="button" className="w-full" variant={"destructive"}>
-													<Link href={`/server/interior/delete/${interior._id}`}>delete</Link>
+													<Link href={`/server/client/delete/${client._id}`}>delete</Link>
 												</Button>
 											</DropdownMenuItem>
 										</DropdownMenuContent>

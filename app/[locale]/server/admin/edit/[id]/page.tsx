@@ -13,7 +13,7 @@ export default async function EditPage({ params }: { params: Promise<{ id: strin
 	await isSuperAdmin()
 	const id = (await params).id
 	const admin = await getOneAdmin(id)
-	console.log("admin from admin edit page", admin)
+
 	return (
 		<Card>
 			<CardHeader>
@@ -24,10 +24,10 @@ export default async function EditPage({ params }: { params: Promise<{ id: strin
 			<Form action={editAdmin}>
 				<Input type="hidden" name="id" value={id} />
 				<CardContent className="flex flex-col gap-4">
-					{/* ---------------------------------- name ---------------------------------- */}
+					{/* -------------------------------- fullName -------------------------------- */}
 					<div className="flex flex-col gap-2">
-						<Label htmlFor="name">name</Label>
-						<Input name="name" placeholder="Ahmed Mohamed" type="text" required defaultValue={admin?.name} />
+						<Label htmlFor="fullName">full Name</Label>
+						<Input name="fullName" placeholder="Ahmed Mohamed" type="text" required defaultValue={admin?.fullName} />
 					</div>
 
 					{/* ---------------------------------- email --------------------------------- */}

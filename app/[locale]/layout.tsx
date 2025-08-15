@@ -31,7 +31,6 @@ export default async function RootLayout({
 				<ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
 					<Header />
 					<main className="container mx-auto overflow-hidden py-14 ">{children}</main>
-					<Footer />
 					<Toaster
 						theme="system"
 						richColors
@@ -43,6 +42,7 @@ export default async function RootLayout({
 							error: <CircleX />,
 						}}
 					/>
+					<Footer />
 				</ThemeProvider>
 			</body>
 		</html>

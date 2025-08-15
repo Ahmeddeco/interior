@@ -8,8 +8,10 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { getAdmins } from "@/data/admin.data"
 import Image from "next/image"
 import { getImageUrl } from "@/functions/getImageUrl"
+import { isSuperAdmin } from "@/functions/authentication"
 
 export default async function AdminPage() {
+	await isSuperAdmin()
 	const admins = await getAdmins()
 	return (
 		<Card className="min-h-[75vh]">

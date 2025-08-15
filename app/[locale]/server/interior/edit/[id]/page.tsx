@@ -5,36 +5,57 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Separator } from "@/components/ui/separator"
 import { Textarea } from "@/components/ui/textarea"
-import { addInterior } from "@/functions/interior.action"
+import { addInterior, editInterior } from "@/functions/interior.action"
 import Form from "next/form"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Styles } from "@/enums/styles"
 import { getClientsForDropdown } from "@/data/client.data"
 import { ClientType } from "@/types/client"
 import CountryInput from "@/components/shared/CountryInput"
+import { getOneInterior } from "@/data/interior.data"
 
-export default async function AddPage() {
+export default async function EditPage({ params }: { params: Promise<{ id: string; locale: "ar" | "en" }> }) {
+	const id = (await params).id
+	const locale = (await params).locale
+	const interior = await getOneInterior(id)
 	const clients: ClientType[] = await getClientsForDropdown()
 
 	return (
 		<Card>
 			<CardHeader>
-				<CardTitle>add interior</CardTitle>
-				<CardDescription>Add an interior project in the database.</CardDescription>
+				<CardTitle>edit interior</CardTitle>
+				<CardDescription>Edit an interior project in the database.</CardDescription>
 				<Separator />
 			</CardHeader>
-			<Form action={addInterior}>
+			<Form action={editInterior}>
+        <Input  type="hidden" name="id" value={id} />
 				<CardContent className="flex flex-col gap-4">
-					{/* -------------------------------- fullName -------------------------------- */}
+					{/* ---------------------------------- name ---------------------------------- */}
 					<div className="flex lg:flex-row flex-col gap-4">
 						<div className="flex flex-col w-full gap-2">
 							<Label htmlFor="full Name">title en</Label>
-							<Input name="title_en" placeholder="Modern Villa" type="text" required minLength={3} maxLength={128} />
+							<Input
+								name="title_en"
+								placeholder="Modern Villa"
+								type="text"
+								required
+								minLength={3}
+								maxLength={128}
+								defaultValue={interior?.title.en}
+							/>
 						</div>
 
 						<div className="flex flex-col w-full gap-2">
 							<Label htmlFor="full Name">title ar</Label>
-							<Input name="title_ar" placeholder="فيلا مودرن" type="text" required minLength={3} maxLength={128} />
+							<Input
+								name="title_ar"
+								placeholder="فيلا مودرن"
+								type="text"
+								required
+								minLength={3}
+								maxLength={128}
+								defaultValue={interior?.title.ar}
+							/>
 						</div>
 					</div>
 
@@ -42,17 +63,31 @@ export default async function AddPage() {
 					<div className="flex lg:flex-row flex-col gap-4">
 						<div className="flex flex-col w-full gap-2">
 							<Label htmlFor="full Name">description en</Label>
-							<Textarea name="description_en" placeholder="Modern Villa" required minLength={64} maxLength={1024} />
+							<Textarea
+								name="description_en"
+								placeholder="Modern Villa"
+								required
+								minLength={64}
+								maxLength={1024}
+								defaultValue={interior?.description.en}
+							/>
 						</div>
 
 						<div className="flex flex-col w-full gap-2">
 							<Label htmlFor="full Name">description ar</Label>
-							<Textarea name="description_ar" placeholder="فيلا مودرن" required minLength={64} maxLength={1024} />
+							<Textarea
+								name="description_ar"
+								placeholder="فيلا مودرن"
+								required
+								minLength={64}
+								maxLength={1024}
+								defaultValue={interior?.description.ar}
+							/>
 						</div>
 					</div>
 					<div className="flex lg:flex-row flex-col gap-4">
 						{/* -------------------------------- style -------------------------------- */}
-						<Select name="style">
+						<Select name="style" defaultValue={interior?.style}>
 							<SelectTrigger className="w-full">
 								<SelectValue placeholder="style" />
 							</SelectTrigger>
@@ -67,7 +102,7 @@ export default async function AddPage() {
 						</Select>
 
 						{/* --------------------------------- client --------------------------------- */}
-						<Select name="client">
+						<Select name="client" defaultValue={interior?.client._id}>
 							<SelectTrigger className="w-full">
 								<SelectValue placeholder="client" />
 							</SelectTrigger>
@@ -82,10 +117,10 @@ export default async function AddPage() {
 					</div>
 
 					{/* ------------------------------ CountryInput ------------------------------ */}
-					<CountryInput />
+					<CountryInput userCity={interior.city} userState={interior.state} userCountry={interior.country} />
 
 					{/* ------------------------ UploadManyImagesDropZone ------------------------ */}
-					<UploadManyImagesDropZone />
+					<UploadManyImagesDropZone dbImages={interior.images}/>
 
 					<SubmitButton />
 				</CardContent>
