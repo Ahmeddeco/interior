@@ -15,16 +15,16 @@ export default function Hero() {
 							interior design{" "}
 						</h1>
 					</MotionWrapper>
-					<MotionWrapper variants={SlideUp(0.5)}>
+					<MotionWrapper variants={SlideUp(0.4)}>
 						<p className="max-w-sm ">Bring your dream home to life with one-on-one interior design services</p>
 					</MotionWrapper>
-					<MotionWrapper variants={SlideUp(0.8)} className="flex items-center gap-4">
+					<MotionWrapper variants={SlideUp(0.6)} className="flex items-center gap-4">
 						<Button variant="outline">contact us</Button>
 						<Button>get started</Button>
 					</MotionWrapper>
 				</div>
 				{/* ---------------------------------- Image --------------------------------- */}
-				<MotionWrapper variants={SlideDown(0.5)} className="w-full lg:w-2/3 relative aspect-square ">
+				<MotionWrapper variants={SlideDown(0.8)} className="w-full lg:w-2/3 relative aspect-square ">
 					<Image src={"/assets/hero.png"} alt={"hero"} fill className="object-contain" />
 				</MotionWrapper>
 			</section>

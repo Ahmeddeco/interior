@@ -45,8 +45,8 @@ export default async function ClientPage() {
 									<Image
 										src={getImageUrl(client.image)}
 										alt={"client"}
-										width={48}
-										height={48}
+										width={72}
+										height={72}
 										className=" aspect-square object-contain"
 									/>
 								</TableCell>

@@ -61,9 +61,9 @@ export default async function InteriorPage({ params }: { params: Promise<{ local
 									<Image
 										src={getImageUrl(interior.images[0])}
 										alt={"interior"}
-										width={48}
-										height={48}
-										className=" aspect-square object-contain"
+										width={128}
+										height={128}
+										className=" aspect-video object-contain"
 									/>
 								</TableCell>
 								<TableCell className="col-span-3">{interior.title[locale]}</TableCell>

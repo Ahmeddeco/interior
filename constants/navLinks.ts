@@ -1,17 +1,26 @@
 export const NavLinks = [
   {
     id: 1,
-    title: "3D interior",
+    title: {
+      ar: "تصميم داخلي",
+      en: "interior",
+    },
     link: "/interior",
   },
   {
     id: 2,
-    title: "furniture",
+    title: {
+      ar: "أثاث",
+      en: "furniture",
+    },
     link: "/furniture",
   },
   {
     id: 3,
-    title: "accessories",
+    title: {
+      ar: "اكسسوارات",
+      en: "accessories",
+    },
     link: "/accessories",
   },
 ]

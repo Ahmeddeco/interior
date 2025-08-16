@@ -7,11 +7,12 @@ export const getAllInteriors = async () => {
   try {
     await connectDb()
     const interiors = await Interior.find().sort({ createdAt: -1 })
-    return interiors
+    return JSON.parse(JSON.stringify(interiors))
   } catch (error) {
     console.error(error)
   }
 }
+
 
 export const getAllInteriorsForInteriorPage = async () => {
   try {
@@ -27,7 +28,7 @@ export const getAllInteriorsForInteriorPage = async () => {
 export const getOneInterior = async (id: string) => {
   try {
     await connectDb()
-    const oneInterior = await Interior.findById(id).populate("client", { fullName: true, _id: true }, Client).lean()
+    const oneInterior = await Interior.findById(id).populate("client", { fullName: true, _id: true, country: true, job: true }, Client).lean()
     return JSON.parse(JSON.stringify(oneInterior))
   } catch (error) {
     console.error(error)

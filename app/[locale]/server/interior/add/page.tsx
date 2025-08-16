@@ -42,17 +42,17 @@ export default async function AddPage() {
 					<div className="flex lg:flex-row flex-col gap-4">
 						<div className="flex flex-col w-full gap-2">
 							<Label htmlFor="full Name">description en</Label>
-							<Textarea name="description_en" placeholder="Modern Villa" required minLength={64} maxLength={1024} />
+							<Textarea name="description_en" placeholder="Modern Villa" required minLength={32} maxLength={1024} />
 						</div>
 
 						<div className="flex flex-col w-full gap-2">
 							<Label htmlFor="full Name">description ar</Label>
-							<Textarea name="description_ar" placeholder="فيلا مودرن" required minLength={64} maxLength={1024} />
+							<Textarea name="description_ar" placeholder="فيلا مودرن" required minLength={32} maxLength={1024} />
 						</div>
 					</div>
 					<div className="flex lg:flex-row flex-col gap-4">
 						{/* -------------------------------- style -------------------------------- */}
-						<Select name="style">
+						<Select name="style" required>
 							<SelectTrigger className="w-full">
 								<SelectValue placeholder="style" />
 							</SelectTrigger>
@@ -67,7 +67,7 @@ export default async function AddPage() {
 						</Select>
 
 						{/* --------------------------------- client --------------------------------- */}
-						<Select name="client">
+						<Select name="client" required>
 							<SelectTrigger className="w-full">
 								<SelectValue placeholder="client" />
 							</SelectTrigger>

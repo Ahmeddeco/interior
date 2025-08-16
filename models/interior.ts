@@ -7,15 +7,15 @@ const interiorSchema = new mongoose.Schema({
     en: { type: String, required: true, maxLength: 128, minLength: 3 },
   },
   description: {
-    ar: { type: String, required: true, maxLength: 1024, minLength: 64 },
-    en: { type: String, required: true, maxLength: 1024, minLength: 64 },
+    ar: { type: String, required: true, maxLength: 1024, minLength: 32 },
+    en: { type: String, required: true, maxLength: 1024, minLength: 32 },
   },
   style: { type: String, required: true, enum: Styles },
   images: [ { type: String, required: true } ],
-  client: { type: mongoose.Schema.Types.ObjectId, ref: "Client", required: true },
   country: { type: String, required: true },
   state: { type: String, required: true },
-  city: String
+  city: String,
+  client: { type: mongoose.Schema.Types.ObjectId, ref: "Client", required: true },
 
 },
   { timestamps: true }

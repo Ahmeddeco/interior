@@ -21,7 +21,7 @@ export default function NavLink() {
 							: "font-semibold"
 					} text-base text-neutral-900 capitalize`}
 				>
-					{title}
+					{title[locale]}
 				</Link>
 			))}
 		</>

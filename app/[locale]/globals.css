@@ -45,6 +45,8 @@
 	--radius-lg: var(--radius);
 	--radius-xl: calc(var(--radius) + 4px);
 	--font-robotoSerif: var(--font-robotoSerif);
+	--font-cairo: var(--font-cairo);
+	--font-cairoPlay: var(--font-cairoPlay);
 }
 
 :root {
@@ -124,19 +126,25 @@
 		@apply bg-background text-foreground;
 	}
 	h1 {
-		@apply text-3xl lg:text-4xl font-semibold tracking-wide uppercase font-robotoSerif text-center lg:text-start text-pretty;
+		@apply text-3xl lg:text-4xl font-extrabold tracking-wider uppercase text-center lg:text-start text-pretty;
 	}
 	h2 {
-		@apply text-2xl lg:text-3xl font-semibold tracking-wide capitalize text-center lg:text-start font-robotoSerif text-pretty;
+		@apply text-2xl lg:text-3xl font-bold tracking-wide capitalize text-center lg:text-start text-pretty;
 	}
 	h3 {
-		@apply text-lg lg:text-xl font-semibold tracking-wide capitalize text-center lg:text-start font-robotoSerif text-pretty;
+		@apply text-lg lg:text-xl font-semibold tracking-wide capitalize text-center lg:text-start text-pretty;
 	}
 	h4 {
-		@apply text-base lg:text-lg font-semibold tracking-wide capitalize text-center lg:text-start font-robotoSerif text-pretty;
+		@apply text-base lg:text-lg font-medium tracking-wide capitalize text-center lg:text-start text-pretty;
+	}
+	h5 {
+		@apply text-sm lg:text-base font-normal tracking-wide capitalize text-center lg:text-start text-pretty;
+	}
+	h6 {
+		@apply text-xs lg:text-sm font-light tracking-wide capitalize text-center lg:text-start text-pretty;
 	}
 	p {
-		@apply text-sm text-muted-foreground text-center lg:text-start text-balance;
+		@apply text-sm text-muted-foreground text-center lg:text-start text-pretty;
 	}
 
 	section {

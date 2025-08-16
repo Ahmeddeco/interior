@@ -13,7 +13,7 @@ export const addInterior = async (formData: FormData) => {
     await Interior.create({
       title: { ar: data.title_ar, en: data.title_en },
       description: { ar: data.description_ar, en: data.description_en },
-      category: data.category,
+      style: data.style,
       client: data.client,
       country: data.country,
       state: data.state,
@@ -41,6 +41,17 @@ export const editInterior = async (formData: FormData) => {
       city: data.city,
       images: splitImages(data.images as string),
     })
+  } catch (error) {
+    console.error(error)
+  }
+  redirect("/server/interior")
+}
+
+export const deleteInterior = async (formData: FormData) => {
+  const id = formData.get("id")
+  try {
+    await connectDb()
+    await Interior.findByIdAndDelete(id)
   } catch (error) {
     console.error(error)
   }

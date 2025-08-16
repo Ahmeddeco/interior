@@ -67,7 +67,7 @@ export default async function EditPage({ params }: { params: Promise<{ id: strin
 								name="description_en"
 								placeholder="Modern Villa"
 								required
-								minLength={64}
+								minLength={32}
 								maxLength={1024}
 								defaultValue={interior?.description.en}
 							/>
@@ -79,7 +79,7 @@ export default async function EditPage({ params }: { params: Promise<{ id: strin
 								name="description_ar"
 								placeholder="فيلا مودرن"
 								required
-								minLength={64}
+								minLength={32}
 								maxLength={1024}
 								defaultValue={interior?.description.ar}
 							/>
