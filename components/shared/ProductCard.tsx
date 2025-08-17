@@ -6,6 +6,8 @@ import { useState } from "react"
 import Image from "next/image"
 import { MapPinHouse, Palette, User } from "lucide-react"
 import { Dialog, DialogContent, DialogClose, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import { Button } from "../ui/button"
+import Link from "next/link"
 
 type Props = {
 	data: oneInteriorProject
@@ -78,6 +80,9 @@ export default function ProductCard({ data, locale }: Props) {
 						<Palette /> {data.style}
 					</h5>
 					<p className="text-pretty text-start">{data.description[locale]}</p>
+					<Button asChild>
+						<Link href={`/interior/start`}>{locale === "en" ? "start your design now" : "إبدأ تصميمك الآن"}</Link>
+					</Button>
 				</CardContent>
 			</Card>
 		</section>
