@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Separator } from "@/components/ui/separator"
 import { Textarea } from "@/components/ui/textarea"
-import { addInterior, editInterior } from "@/functions/interior.action"
+import {  editInterior } from "@/functions/interior.action"
 import Form from "next/form"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Styles } from "@/enums/styles"
@@ -16,7 +16,7 @@ import { getOneInterior } from "@/data/interior.data"
 
 export default async function EditPage({ params }: { params: Promise<{ id: string; locale: "ar" | "en" }> }) {
 	const id = (await params).id
-	const locale = (await params).locale
+	// const locale = (await params).locale
 	const interior = await getOneInterior(id)
 	const clients: ClientType[] = await getClientsForDropdown()
 

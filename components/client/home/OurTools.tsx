@@ -1,7 +1,7 @@
 import { SlideLeft } from "@/animation/animate"
 import MotionWrapper from "@/components/shared/MotionWrapper"
 import { Button } from "@/components/ui/button"
-import { SiBlender, SiUnrealengine, SiAdobephotoshop, SiReact } from "react-icons/si"
+import { SiBlender, SiUnrealengine } from "react-icons/si"
 import { RiNextjsFill } from "react-icons/ri"
 import { BsHeadsetVr } from "react-icons/bs"
 import { HiColorSwatch } from "react-icons/hi"

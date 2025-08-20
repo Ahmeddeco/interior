@@ -3,7 +3,6 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
 import { isSuperAdmin } from "@/functions/authentication"
-import { deleteClient } from "@/functions/client.action"
 import { deleteInterior } from "@/functions/interior.action"
 import Form from "next/form"
 import Link from "next/link"

@@ -1,6 +1,8 @@
-// "use client"
-import * as motion from "motion/react-client"
-import { Variants } from "motion/react"
+"use client"
+
+import { motion, Variants } from "motion/react"
+// import * as motion from "motion/react-client"
+// import { Variants } from "motion/react"
 type Props = {
 	children: React.ReactNode
 	variants: Variants

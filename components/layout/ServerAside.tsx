@@ -2,13 +2,11 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
 import { Separator } from "../ui/separator"
-import { usePathname } from "next/navigation"
-import { useCurrentLocale } from "@/locales/client"
 import ServerLink from "./ServerLink"
 
 export default function ServerAside() {
-	const pathName = usePathname()
-	const locale = useCurrentLocale()
+	// const pathName = usePathname()
+	// const locale = useCurrentLocale()
 
 	return (
 		<Card>

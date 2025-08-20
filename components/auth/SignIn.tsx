@@ -1,4 +1,3 @@
-import { signIn } from "@/auth"
 import { Button } from "../ui/button"
 import { LogIn } from "lucide-react"
 import { signInAction } from "@/functions/authentication"

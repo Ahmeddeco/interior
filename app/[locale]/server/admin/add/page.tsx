@@ -18,7 +18,7 @@ export default async function AddPage() {
 				<Separator />
 			</CardHeader>
 			<Form action={addAdmin}>
-				<Input name="image" value={user?.image!} type="hidden" />
+				<Input name="image" value={user.image!} type="hidden" />
 				<CardContent className="flex flex-col gap-4">
 					{/* ---------------------------------- name ---------------------------------- */}
 					<div className="flex flex-col gap-2">
