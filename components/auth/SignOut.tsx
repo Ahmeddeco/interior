@@ -1,12 +1,14 @@
+import Form from "next/form"
 import { Button } from "../ui/button"
 import { signOutAction } from "@/functions/authentication"
+import { signOut } from "@/auth"
 
 export default function SignOut() {
 	return (
-		<form className="w-full" action={signOutAction}>
-			<Button type="submit" className="w-full  text-neutral-900" variant={"outline"}>
-				SignOut
+		<Form action={signOutAction} className=" w-full p-4">
+			<Button type="submit" variant={"outline"} className="text-neutral-900 w-full">
+				Sign Out
 			</Button>
-		</form>
+		</Form>
 	)
 }

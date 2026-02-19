@@ -1,4 +1,3 @@
-import React from "react"
 import { Button } from "../ui/button"
 import { User2 } from "lucide-react"
 import { auth } from "@/auth"
@@ -37,9 +36,8 @@ export default async function User() {
 					<DropdownMenuSeparator />
 					<DropdownMenuLabel>{user.name}</DropdownMenuLabel>
 					<DropdownMenuItem>{user.email}</DropdownMenuItem>
-					<DropdownMenuItem>
-						<SignOut />
-					</DropdownMenuItem>
+					<SignOut />
+					
 				</DropdownMenuContent>
 			</DropdownMenu>
 		</>

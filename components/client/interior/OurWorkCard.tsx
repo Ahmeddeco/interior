@@ -16,7 +16,7 @@ type Props = {
 
 export default function OurWorkCard({ interiorProject, locale, index }: Props) {
 	return (
-		<Card className=" min-h-[60vh] h-auto w-full">
+		<Card className="  h-auto w-full">
 			<CardContent
 				className={` ${index % 2 === 0 ? "lg:flex-row-reverse" : "lg:flex-row"} flex flex-col gap-12 lg:gap-24 w-full`}
 			>

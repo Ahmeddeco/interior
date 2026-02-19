@@ -5,15 +5,17 @@ import connectDb from "@/lib/db"
 import Admin from "@/models/admin"
 import { redirect } from "next/navigation"
 
+
 /* ------------------------------ signInAction ------------------------------ */
 export const signInAction = async () => {
-				await signIn("google", { redirectTo: "/api/auth/create"})
-			}
+  await signIn("google", { redirectTo: "/api/auth/create" })
+}
 
 /* ------------------------------ signOutAction ----------------------------- */
-      export const signOutAction = async () => {
-				await signOut()
-			}
+export const signOutAction = async () => {
+  console.log('signOut from signOutAction')
+  await signOut()
+}
 
 /* ------------------------------ isSuperAdmin ------------------------------ */
 export const isSuperAdmin = async () => {
@@ -44,5 +46,17 @@ export const isAdmin = async () => {
     }
   } catch (error) {
     console.error(error)
+  }
+}
+
+/* --------------------------------- isUser --------------------------------- */
+export const isUser = async () => {
+  const session = await auth()
+  const user = session?.user
+
+  if (!user) {
+    redirect("/")
+  } else {
+    return user
   }
 }

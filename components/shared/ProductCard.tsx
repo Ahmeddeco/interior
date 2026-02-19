@@ -17,7 +17,6 @@ type Props = {
 export default function ProductCard({ data, locale }: Props) {
 	const [image, setImage] = useState(0)
 
-	console.log("data from product card", data)
 	return (
 		<section className="flex flex-col lg:flex-row gap-4 ">
 			{/* ---------------------------------- Image --------------------------------- */}

@@ -17,7 +17,6 @@ export default function CountryInput({ userCity = "", userState = "", userCountr
 	const [country, setCountry] = useState<Country>(userCountry)
 	const [state, setState] = useState<State>(userState)
 	const [city, setCity] = useState<City>(userCity)
-	console.log('city from city input', city)
 
 	return (
 		<div className="flex flex-col gap-4">
