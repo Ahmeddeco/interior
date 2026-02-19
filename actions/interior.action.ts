@@ -3,7 +3,7 @@
 import connectDb from "@/lib/db"
 import Interior from "@/models/interior"
 import { redirect } from "next/navigation"
-import { splitImages } from "./splitImages"
+import { splitImages } from "../functions/splitImages"
 
 /* ------------------------------- addInterior ------------------------------ */
 export const addInterior = async (formData: FormData) => {

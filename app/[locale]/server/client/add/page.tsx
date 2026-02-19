@@ -5,7 +5,7 @@ import { Card, CardDescription, CardHeader, CardTitle, CardContent } from "@/com
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Separator } from "@/components/ui/separator"
-import { addClient } from "@/functions/client.action"
+import { addClient } from "@/actions/client.action"
 import Form from "next/form"
 
 export default function AddPage() {

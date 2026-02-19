@@ -5,14 +5,14 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Separator } from "@/components/ui/separator"
 import { Textarea } from "@/components/ui/textarea"
-import {  editInterior } from "@/functions/interior.action"
+import { editInterior } from "@/actions/interior.action"
 import Form from "next/form"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Styles } from "@/enums/styles"
-import { getClientsForDropdown } from "@/data/client.data"
+import { getClientsForDropdown } from "@/dl/client.data"
 import { ClientType } from "@/types/client"
 import CountryInput from "@/components/shared/CountryInput"
-import { getOneInterior } from "@/data/interior.data"
+import { getOneInterior } from "@/dl/interior.data"
 
 export default async function EditPage({ params }: { params: Promise<{ id: string; locale: "ar" | "en" }> }) {
 	const id = (await params).id
@@ -28,7 +28,7 @@ export default async function EditPage({ params }: { params: Promise<{ id: strin
 				<Separator />
 			</CardHeader>
 			<Form action={editInterior}>
-        <Input  type="hidden" name="id" value={id} />
+				<Input type="hidden" name="id" value={id} />
 				<CardContent className="flex flex-col gap-4">
 					{/* ---------------------------------- name ---------------------------------- */}
 					<div className="flex lg:flex-row flex-col gap-4">
@@ -120,7 +120,7 @@ export default async function EditPage({ params }: { params: Promise<{ id: strin
 					<CountryInput userCity={interior.city} userState={interior.state} userCountry={interior.country} />
 
 					{/* ------------------------ UploadManyImagesDropZone ------------------------ */}
-					<UploadManyImagesDropZone dbImages={interior.images}/>
+					<UploadManyImagesDropZone dbImages={interior.images} />
 
 					<SubmitButton />
 				</CardContent>

@@ -1,37 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Interior Design Hub
 
-## Getting Started
+![interior design](./public/assets/interior.webp)
 
-First, run the development server:
+A high-end, full-stack Interior Design platform built with a focus on modern aesthetics and extreme performance. This project leverages the latest capabilities of Next.js 16 and React 19 to deliver a seamless, multi-language experience.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 👨‍💻 Technical Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This project is built using a "bleeding-edge" tech stack:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Core Framework:** Next.js 16.1.6 (App Router) with Turbopack for ultra-fast development cycles.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **UI Library:** React 19.2.4 utilizing the newest rendering patterns.
 
-## Learn More
+- **Styling:** Tailwind CSS 4.1.12 for a utility-first, modern design system.
 
-To learn more about Next.js, take a look at the following resources:
+- **Animations:** Built with Motion (Framer Motion) for fluid, interactive transitions.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Database:** Mongoose for robust MongoDB data modeling.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Internationalization:** next-international for localized routing (Arabic & English).
 
-## Deploy on Vercel
+- **Authentication:** Next-Auth v5 (Beta) with secure session management.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Components:** Powered by Radix UI primitives for accessibility and customization.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# interior
+## 📂 Project Structure
+
+The repository follows a strictly organized architecture:
+
+- **app/[locale]:** Root of the application with dynamic localization support.
+
+- **actions:** Centralized Server Actions for secure database mutations.
+
+- **components:** Modularized into auth, client, server, and ui for reusability.
+
+- **locales:** Dictionary management for multi-language support (AR/EN).
+
+- **models:** TypeScript-defined schemas for Admin, Client, Interior, and User.
+
+- **enums:** Type-safe constants for colors, projects, and design styles.
+
+- **functions:** Utility logic for authentication and image processing.
+
+## 🗝️ Key Features
+
+- **Bilingual Support:** Full RTL/LTR support for Arabic and English users.
+
+- **Optimized Performance:** Leveraging Next.js 16 server components and Turbopack.
+
+- **Advanced Image Handling:** Integrated with uploadthing for professional media management.
+
+- **Modern UX:** Features Dark/Light mode, responsive layouts, and accessible UI components.

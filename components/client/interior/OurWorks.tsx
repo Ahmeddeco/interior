@@ -1,4 +1,4 @@
-import { getAllInteriors } from "@/data/interior.data"
+import { getAllInteriors } from "@/dl/interior.data"
 import { InteriorProject } from "@/types/interior.type"
 import OurWorkCard from "./OurWorkCard"
 

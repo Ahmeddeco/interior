@@ -4,8 +4,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Separator } from "@/components/ui/separator"
-import { getOneAdmin } from "@/data/admin.data"
-import { editAdmin } from "@/functions/admin.action"
+import { getOneAdmin } from "@/dl/admin.data"
+import { editAdmin } from "@/actions/admin.action"
 import { isSuperAdmin } from "@/functions/authentication"
 import Form from "next/form"
 
