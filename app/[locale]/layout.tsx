@@ -25,13 +25,12 @@ const cairoPlay = localFont({
 	variable: "--font-cairoPlay",
 })
 
-
 export default async function RootLayout({
 	children,
 	params,
 }: Readonly<{
 	children: React.ReactNode
-	params: Promise<{ locale: "ar" | "en" }>
+	params: Promise<{ locale: string }>
 }>) {
 	const locale = (await params).locale
 
